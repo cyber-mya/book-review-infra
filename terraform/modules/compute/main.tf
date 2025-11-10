@@ -52,11 +52,10 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
     storage_account_type = "Standard_LRS"
     name                 = "${var.application_name}-${var.environment}-frontend-vm-disk"
   }
-
-  admin_ssh_key {
-    username   = var.admin_username
-    public_key = file(var.ssh_public_key)
-  }
+admin_ssh_key {
+  username   = var.admin_username
+  public_key = fileexpand(var.ssh_public_key)
+}
 
   source_image_reference {
     publisher = "Canonical"
@@ -83,10 +82,11 @@ resource "azurerm_linux_virtual_machine" "backend_vm" {
     name                 = "${var.application_name}-${var.environment}-backend-vm-disk"
   }
 
-  admin_ssh_key {
-    username   = var.admin_username
-    public_key = file(var.ssh_public_key)
-  }
+ admin_ssh_key {
+  username   = var.admin_username
+  public_key = fileexpand(var.ssh_public_key)
+}
+
 
   source_image_reference {
     publisher = "Canonical"
