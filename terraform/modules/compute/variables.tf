@@ -7,3 +7,4 @@ variable "application_name" {}
 variable "environment" {}
 variable "vm_size" {}
 variable "ssh_public_key" {}
+
