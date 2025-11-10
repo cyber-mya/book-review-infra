@@ -54,8 +54,9 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
   }
 admin_ssh_key {
   username   = var.admin_username
-  public_key = fileexpand(var.ssh_public_key)
+  public_key = file(var.ssh_public_key)
 }
+
 
   source_image_reference {
     publisher = "Canonical"
@@ -84,8 +85,9 @@ resource "azurerm_linux_virtual_machine" "backend_vm" {
 
  admin_ssh_key {
   username   = var.admin_username
-  public_key = fileexpand(var.ssh_public_key)
+  public_key = file(var.ssh_public_key)
 }
+
 
 
   source_image_reference {

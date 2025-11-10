@@ -15,5 +15,6 @@ admin_password = "YourSecureVMPassword123!"
 mysql_admin_username = "mysqladmin"
 mysql_admin_password = "YourSecureMySQLPassword123!"
 mysql_database_name  = "bookreviews_dev"
-ssh_public_key = "~/.ssh/bookreview_azure.pub"
+ssh_public_key = "~/.ssh/azure_vm_key.pub"
+
 

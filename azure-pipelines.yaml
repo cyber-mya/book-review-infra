@@ -25,7 +25,7 @@ stages:
     - task: DownloadSecureFile@1
       name: download_ssh_key
       inputs:
-        secureFile: 'bookreview_azure'
+        secureFile: 'azure_vm_key.pub'
 
     - script: |
         echo "Copying SSH public key into Terraform module"
